@@ -5,7 +5,7 @@ import Nav from './Nav'
 const Header = () => {
   return (
     <header>
-        <h1>News Web</h1>
+        {/* <h1>News Web</h1> */}
         <Nav />
     </header>
   )
