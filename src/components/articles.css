@@ -1,5 +1,5 @@
 .articles__container {
-  margin-top: 1rem;
+  margin: 2rem 0 3rem 0;
 }
 
 .articles-box {
@@ -49,6 +49,7 @@
 }
 
 @media screen and (min-width: 650px) {
+  
   .articles-box {
     display:flex;
     flex-direction: row;
