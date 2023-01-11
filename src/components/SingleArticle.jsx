@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import * as api from '../utils/api'
 import './singleArticle.css'
-import {format} from 'date-fns'
 
 const SingleArticle = () => {
 
