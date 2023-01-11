@@ -17,7 +17,7 @@ const Articles = () => {
     })
   }, [])
 
-  if (isLoading) return <Bars></Bars>
+  if (isLoading) return <p>Loading...</p>
 
   return (
       <main className='articles__container'>
