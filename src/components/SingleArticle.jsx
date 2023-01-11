@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import * as api from '../utils/api'
 import './singleArticle.css'
+import Comments from './Comments'
 
 const SingleArticle = () => {
 
   const [article, setArticle] = useState({});
+  const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
   const {article_id} = useParams();
@@ -29,6 +31,7 @@ const SingleArticle = () => {
           <h6 className='singleArticle-author'>By {article.author} at {article.created_at.split("T")[0]}</h6>
           <p className='singleArticle-body'>{article.body}</p>
         </div>
+        <Comments comments={comments} setComments={setComments}/>
    
     </section>
   )
