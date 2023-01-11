@@ -20,3 +20,12 @@ export const getArticlesCommentsById = (article_id) => {
         return response.data;
     })
 }
+
+export const patchComments = (comment_id) => {
+    return newsApi.patch(`/comments/${comment_id}`, {
+        inc_votes: 1
+    })
+    .then((response) => {
+        return response.data;
+    })
+}
