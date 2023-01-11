@@ -5,14 +5,20 @@ import './comments.css'
 
 const Comments = ({comments, setComments}) => {
 
+    const [isLoading, setIsLoading] = useState(true);
     const {article_id} = useParams();
 
     useEffect(()=> {
+        setIsLoading(true)
         api.getArticlesCommentsById(article_id)
         .then(data => {
             setComments(data.comments);
+            setIsLoading(false)
         })
     }, [])
+
+    if(isLoading) return <p>Loading...</p>
+    if(comments.length === 0) return <p>No comments to display</p>
 
   return (
     <section className='container comments__container'>
