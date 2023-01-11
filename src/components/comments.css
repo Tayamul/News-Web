@@ -1,0 +1,57 @@
+.comments__container {
+    /* background-color: yellow; */
+    width: 100%;
+}
+
+
+.comments-list {
+    font-weight: 400;
+    border-bottom: 1px dashed #4F65F1;
+    margin-bottom: 1.5rem;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #4F65F1;
+    margin-bottom: 1rem;
+}
+
+.comments-list h6 {
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+
+.comments-box {
+    /* background-color: red; */
+    font-weight: 400;
+    font-style: italic;
+    
+}
+
+.comments-body {
+    font-size: 1rem;
+    /* margin-top: 0.7rem; */
+    display: inline-block;
+}
+
+
+/* Medium-sized screens */
+@media screen and (min-width: 650px) {
+    .comments__container {
+      margin-bottom: 10rem;
+    }
+  
+    .comments-box {
+      margin-left: 2.5rem;
+    }
+  }
+  
+  /* Large-sized screens */
+  @media screen and (min-width: 1024px) {
+    .comments-box {
+      margin: 3rem auto;
+      max-width: 700px;
+    }
+  }
