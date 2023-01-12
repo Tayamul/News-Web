@@ -1,0 +1,16 @@
+.like-button:hover {
+    color: green;
+    cursor: pointer;
+}
+
+
+.dislike-button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.articles-votes {
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #4351E8;
+}
