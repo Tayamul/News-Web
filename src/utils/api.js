@@ -41,3 +41,13 @@ export const patchArticlesById = (article_id, increment) => {
       return response.data;
     });
 };
+
+export const postComments = (article_id, newComment) => {
+  return newsApi.post(`/articles/${article_id}/comments`, {
+    username: "grumpy19",
+    body: newComment
+  })
+  .then((response) => {
+    return response.data.comment
+  })
+}
