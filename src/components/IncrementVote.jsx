@@ -12,19 +12,20 @@ const IncrementVote = ({votes, comment_id}) => {
 
     const incVote = (comment_id) => {
         setVotesIncrement((currVotesIncrement) => currVotesIncrement + 1);
-        api.patchComments(comment_id).catch((err) => {
-            setError('System broken')
+        api.patchComments(comment_id, 1).catch((err) => {
+            setError("Something's gone worng, please try again")
             setVotesIncrement((currVotesIncrement) => currVotesIncrement - 1);
         })
     }
 
     const decVote = (comment_id) => {
         setVotesIncrement((currVotesIncrement) => currVotesIncrement - 1);
-        api.patchComments(comment_id).catch((err) => {
-            setError('System broken')
+        api.patchComments(comment_id, -1).catch((err) => {
+            setError("Something's gone worng, please try again")
             setVotesIncrement((currVotesIncrement) => currVotesIncrement + 1);
         })
     }
+    
     if(error) return error;
 
     return (
@@ -37,28 +38,4 @@ const IncrementVote = ({votes, comment_id}) => {
 }
 
 
-
-
-
-
 export default IncrementVote
-// const IncrementVote = ({comments, commentId}) => {
-//     const [votesChange, setVotesChange] = useState(0);
-
-//     const incVote = (commentId) => {
-//         setVotesChange((currVotesChange) => currVotesChange + 1);
-
-//     }
-
-//   return (
-//     <div>
-//         {comments.filter((comment) => {
-//             console.log(comment.comment_id, "COO")
-//             return <p>{comment.votes}</p>
-//         })}
-       
-//     </div>
-//   )
-// }
-
-// {<SlLike className='like-btn' onClick={() => {incVote(commentId)}}/>} 
