@@ -22,20 +22,20 @@ export const getArticlesCommentsById = (article_id) => {
   });
 };
 
-export const patchComments = (comment_id) => {
+export const patchComments = (comment_id, increment) => {
   return newsApi
     .patch(`/comments/${comment_id}`, {
-      inc_votes: 1,
+      inc_votes: increment,
     })
     .then((response) => {
       return response.data;
     });
 };
 
-export const patchArticlesById = (article_id) => {
+export const patchArticlesById = (article_id, increment) => {
   return newsApi
     .patch(`/articles/${article_id}`, {
-      inc_votes: 1,
+      inc_votes: increment,
     })
     .then((response) => {
       return response.data;
