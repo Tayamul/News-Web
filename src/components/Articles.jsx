@@ -5,9 +5,8 @@ import {Link} from 'react-router-dom'
 import { Bars } from 'react-loading-icons'
 import IncrementArticleVote from './IncrementArticleVote'
 
-const Articles = () => {
+const Articles = ({articles, setArticles}) => {
 
-  const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
