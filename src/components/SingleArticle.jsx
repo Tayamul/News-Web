@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import * as api from '../utils/api'
 import './singleArticle.css'
 import Comments from './Comments'
+import CommentAdder from './CommentAdder'
 
 const SingleArticle = () => {
 
@@ -32,7 +33,7 @@ const SingleArticle = () => {
           <p className='singleArticle-body'>{article.body}</p>
         </div>
         <Comments comments={comments} setComments={setComments}/>
-   
+        <CommentAdder article_id={article.article_id} setComments={setComments}/>
     </section>
   )
 }
