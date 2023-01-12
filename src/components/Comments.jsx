@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import * as api from '../utils/api'
 import './comments.css'
+import IncrementVote from './IncrementVote'
 
 const Comments = ({comments, setComments}) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const {article_id} = useParams();
-
+    
     useEffect(()=> {
         setIsLoading(true)
         api.getArticlesCommentsById(article_id)
@@ -16,9 +17,11 @@ const Comments = ({comments, setComments}) => {
             setIsLoading(false)
         })
     }, [])
+    
 
     if(isLoading) return <p>Loading...</p>
     if(comments.length === 0) return <p>No comments to display</p>
+
 
   return (
     <section className='container comments__container'>
@@ -30,10 +33,11 @@ const Comments = ({comments, setComments}) => {
                     
                     <h6>{comment.author}</h6>
                     <p className='comments-body'>{comment.body}</p>
-                    <h6>Date posted:{comment.created_at.split("T")[0]}</h6>
-                    <h6>votes: {comment.votes}</h6>
+                    <h6>Date posted: {comment.created_at.split("T")[0]}</h6>
+                    <IncrementVote votes={comment.votes} comment_id={comment.comment_id}/>
                 </li>
             })}
+            
         </ul>
     </section>
   )
