@@ -10,6 +10,7 @@ const SingleArticle = () => {
 
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
+  const [renderKey, setRenderKey] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   
   const {article_id} = useParams();
@@ -33,7 +34,7 @@ const SingleArticle = () => {
           <h6 className='singleArticle-author'>By {article.author} at {new dayjs(article.created_at).format("D MMM YYYY")}</h6>
           <p className='singleArticle-body'>{article.body}</p>
         </div>
-        <Comments comments={comments} setComments={setComments}/>
+        <Comments comments={comments} setComments={setComments} renderKey={renderKey} setRenderKey={setRenderKey}/>
         <CommentAdder article_id={article.article_id} setComments={setComments}/>
     </section>
   )
