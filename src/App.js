@@ -1,11 +1,13 @@
 // import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import {useState} from 'react'
+import ErrorPage from './components/ErrorPage'
 import Header from './components/Header'
 import Nav from './components/Nav'
 import Articles from './components/Articles'
 import SingleArticle from './components/SingleArticle';
 import { CssBaseline } from '@mui/material';
+
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
       <Header />
       <Nav setArticles={setArticles}/>
       <Routes>
+        <Route path='*' element={<ErrorPage/>}/>
         <Route path='/' element={<Articles articles={articles} setArticles={setArticles}/>}></Route>
         <Route path='/coding' element={<Articles topic='coding' articles={articles} setArticles={setArticles}/>}></Route>
         <Route path='/football' element={<Articles topic='football' articles={articles} setArticles={setArticles}/>}></Route>
