@@ -1,36 +1,47 @@
-import * as React from 'react'
-import {useState, useEffect} from 'react'
-import DensityMediumIcon from '@mui/icons-material/DensityMedium';
-import './nav.css'
-import * as api from '../utils/api'
+import React from "react";
+import { useState, useEffect } from "react";
+import { Tab, Tabs } from "@mui/material";
+import {Link} from 'react-router-dom'
+import * as api from "../utils/api";
+
 
 const Nav = ({setArticles}) => {
-
-  const [topic, setTopic] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const [topics, setTopics] = useState([]);
+  const [selectedTopic, setSelectedTopic] = useState(0);
 
   useEffect(() => {
-    if(topic === 'topics') return;
-    setIsLoading(true);
-    api.getArticlesByQuery(topic).then((data) => {
-      setArticles(data.articles)
-      setIsLoading(false);
+    api.getTopics().then((data) => {
+      setTopics(data.topics);
     })
-  }, [topic])
+  }, [])
 
-  if(isLoading) return <p>Loading...</p>
+  const handleChange = (e, newValue) => {
+    setSelectedTopic(newValue);
+  }
+
+  const handleClick = (slug) => {
+    console.log(slug,"NAV SLUG")
+    api.getArticles(slug).then((data) => {
+      console.log(data, "NAV")
+      setArticles(data.articles);
+    })
+  }
 
   return (
-    <nav className='navBar'>
-        <select value={topic} onChange={(e) => {setTopic(e.target.value)}}>
-            <option value="topics">Topics</option>
-            <option value="coding">Coding</option>
-            <option value="football">Football</option>
-            <option value="cooking">Cooking</option>
-        </select>
-        <DensityMediumIcon />
-    </nav>
-    )
-  }
-  
-  export default Nav
+    <Tabs
+      value={selectedTopic}
+      onChange={handleChange}
+      textColor="secondary"
+      indicatorColor="secondary"
+      aria-label="select a topic">
+        
+      <Tab label="All Articles" key="All Articles" component={Link} to='/'/>
+      {topics.map(({slug}) => {
+        return <Tab label={slug} key={slug} component={Link} to={`/${slug}`} onChange={() => {handleClick(slug)}}/>
+      })}
+      
+    </Tabs>
+  );
+};
+
+export default Nav;
