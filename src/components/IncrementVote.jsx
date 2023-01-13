@@ -30,7 +30,7 @@ const IncrementVote = ({votes, comment_id}) => {
 
     return (
     <section>
-        <p className='comments-votes'>votes: {votes + votesIncrement}</p>
+        <p className='comments-votes'>{votes + votesIncrement} votes</p>
         <ThumbDownOffAltOutlinedIcon className='dislike-btn' onClick={() => {decVote(comment_id)}}/>
         <ThumbUpOutlinedIcon className='like-btn' onClick={() => {incVote(comment_id)}}/>
     </section>

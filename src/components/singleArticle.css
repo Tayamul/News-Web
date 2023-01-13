@@ -13,13 +13,15 @@
 }
 
 .singleArticle-topic {
-  font-weight: 400;
+  font-weight: 700;
   font-style: italic;
+  color: #4f65f1;
 }
 
 .singleArticle-author {
   font-weight: 400;
   font-style: italic;
+  color: #4f65f1;
 }
 
 .singleArticle-body {
@@ -30,7 +32,7 @@
 /* Medium-sized screens */
 @media screen and (min-width: 650px) {
   .singleArticle__container {
-    margin-bottom: 10rem;
+    margin-bottom: 3rem;
   }
 
   .singleArticle-box {

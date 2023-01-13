@@ -4,6 +4,7 @@ import * as api from '../utils/api'
 import './singleArticle.css'
 import Comments from './Comments'
 import CommentAdder from './CommentAdder'
+import dayjs from 'dayjs'
 
 const SingleArticle = () => {
 
@@ -26,10 +27,10 @@ const SingleArticle = () => {
   return (
     <section className='container singleArticle__container'>
         <div className='singleArticle-box'>
-          <h5 className='singleArticle-topic'>{article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}</h5>
-          <h3 className='singleArticle-title'>{article.title}</h3>
-          <img src='https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png' alt='cover pic for now' />
-          <h6 className='singleArticle-author'>By {article.author} at {article.created_at.split("T")[0]}</h6>
+          <h4 className='singleArticle-topic'>{article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}</h4>
+          <h2 className='singleArticle-title'>{article.title}</h2>
+          <img src={`https://source.unsplash.com/random?${article.title}`} alt={article.title} />
+          <h6 className='singleArticle-author'>By {article.author} at {new dayjs(article.created_at).format("D MMM YYYY")}</h6>
           <p className='singleArticle-body'>{article.body}</p>
         </div>
         <Comments comments={comments} setComments={setComments}/>
