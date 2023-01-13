@@ -33,6 +33,8 @@ const Nav = ({setArticles}) => {
       onChange={handleChange}
       textColor="secondary"
       indicatorColor="secondary"
+      variant='scrollable'
+      scrollButtons='auto'
       aria-label="select a topic">
         
       <Tab label="All Articles" key="All Articles" component={Link} to='/'/>
