@@ -41,7 +41,7 @@ const Comments = ({comments, setComments, renderKey, setRenderKey}) => {
                     <h6>Date posted: {new dayjs(comment.created_at).format("D MMM YYYY")}</h6>
                     <IncrementVote votes={comment.votes} comment_id={comment.comment_id}/>
                 </li>
-                <DeleteComment comment_id={comment.comment_id} renderKey={renderKey} setRenderKey={setRenderKey}/>
+                <DeleteComment comment_id={comment.comment_id} setComments={setComments} renderKey={renderKey} setRenderKey={setRenderKey}/>
                 </div>)
             })}
             
