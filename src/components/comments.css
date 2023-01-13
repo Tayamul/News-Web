@@ -10,11 +10,12 @@
     margin-bottom: 1.5rem;
 }
 
-h5 {
+.comments-box h5 {
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #4F65F1;
     margin-bottom: 1rem;
+    font-style: normal;
 }
 
 .comments-list h6 {
@@ -36,14 +37,12 @@ h5 {
     /* margin-top: 0.7rem; */
     display: inline-block;
     color: #4351E8;
+    font-style: normal;
 }
 
 
 /* Medium-sized screens */
 @media screen and (min-width: 650px) {
-    .comments__container {
-      margin-bottom: 10rem;
-    }
   
     .comments-box {
       margin-left: 2.5rem;
