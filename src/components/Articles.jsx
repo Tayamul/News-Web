@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 // import { Bars } from 'react-loading-icons'
 import IncrementArticleVote from './IncrementArticleVote'
 
-import { Container, Stack, Grid, Card, CardActionArea, CardMedia, CardContent, Avatar, Box, Typography} from '@mui/material'
+import { Container, Stack, Grid, Card, CardActionArea, CardMedia, CardContent, Box, Typography} from '@mui/material'
 import dayjs from "dayjs";
 
 const Articles = ({articles, setArticles, topic}) => {
@@ -73,13 +73,9 @@ const Articles = ({articles, setArticles, topic}) => {
                         }}
                       >
                         <Box sx={{ display: "flex", alignItems: "center" }}>
-                          <Avatar
-                            alt={article.author}
-                            src={`https://api.multiavatar.com/${article.author}.svg`}
-                            sx={{ width: 35, height: 35, mr: 1 }}
-                          />
+
                           <Typography color="textSecondary">
-                            {article.author}
+                            by {article.author}
                           </Typography>
 
                         </Box>
