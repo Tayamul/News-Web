@@ -1,58 +1,66 @@
 .comments__container {
-    /* background-color: yellow; */
-    width: 100%;
+  /* background-color: yellow; */
+  width: 100%;
 }
 
-
 .comments-list {
-    font-weight: 400;
-    border-bottom: 1px dashed #4F65F1;
-    margin-bottom: 1.5rem;
+  font-weight: 400;
+
+  margin-top: 1.5rem;
 }
 
 .comments-box h5 {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #4F65F1;
-    margin-bottom: 1rem;
-    font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #4f65f1;
+  /* margin-bottom: 1rem; */
+  font-style: normal;
 }
 
 .comments-list h6 {
-    font-weight: 400;
-    font-size: 0.7rem;
-    
+  font-weight: 400;
+  font-size: 0.7rem;
 }
 
-
 .comments-box {
-    /* background-color: red; */
-    font-weight: 400;
-    font-style: italic;
-    
+  /* background-color: red; */
+  font-weight: 400;
+  font-style: italic;
+}
+
+#comments-box2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #4f65f1;
 }
 
 .comments-body {
-    font-size: 1rem;
-    /* margin-top: 0.7rem; */
-    display: inline-block;
-    color: #4351E8;
-    font-style: normal;
+  font-size: 1rem;
+  /* margin-top: 0.7rem; */
+  display: inline-block;
+  color: #4351e8;
+  font-style: normal;
 }
 
+#deleting-btn {
+  color: red;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
 
 /* Medium-sized screens */
 @media screen and (min-width: 650px) {
-  
-    .comments-box {
-      margin-left: 2.5rem;
-    }
+  .comments-box {
+    margin-left: 2.5rem;
   }
-  
-  /* Large-sized screens */
-  @media screen and (min-width: 1024px) {
-    .comments-box {
-      margin: 3rem auto;
-      max-width: 700px;
-    }
+}
+
+/* Large-sized screens */
+@media screen and (min-width: 1024px) {
+  .comments-box {
+    margin: 3rem auto;
+    max-width: 700px;
   }
+}
