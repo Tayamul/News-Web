@@ -64,3 +64,9 @@ export const postComments = (article_id, newComment) => {
 export const deleteComments = (comment_id) => {
   return newsApi.delete(`/comments/${comment_id}`)
 }
+
+export const getUsers = () => {
+  return newsApi.get(`/users`).then((response) => {
+    return response.data
+  })
+}

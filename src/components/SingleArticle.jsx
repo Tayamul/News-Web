@@ -12,18 +12,25 @@ const SingleArticle = () => {
   const [comments, setComments] = useState([]);
   const [renderKey, setRenderKey] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false)
   
   const {article_id} = useParams();
 
   useEffect(() => {
     setIsLoading(true)
+    setIsError(false)
     api.getArticlesById(article_id).then((data) => {
       setArticle(data.article)
       setIsLoading(false);
     })
+    .catch((err) => {
+      setIsError(true)
+    })
   }, [article_id])
 
+  {isError && <p>Something's gone wrong, please try again</p>}
   if(isLoading) return <p>Loading...</p>
+
 
   return (
     <section className='container singleArticle__container'>
