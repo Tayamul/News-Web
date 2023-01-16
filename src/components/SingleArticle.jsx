@@ -28,7 +28,7 @@ const SingleArticle = () => {
     })
   }, [article_id])
 
-  {isError && <p>Something's gone wrong, please try again</p>}
+  isError && <p>Something's gone wrong, please try again</p>
   if(isLoading) return <p>Loading...</p>
 
 

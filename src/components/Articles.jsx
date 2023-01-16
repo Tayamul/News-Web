@@ -37,6 +37,7 @@ const Articles = ({ articles, setArticles, topic }) => {
       .catch((err) => {
         console.log(err, "ERR");
       });
+// eslint-disable-next-line
   }, [topic, sortBy, order]);
 
   if (isLoading) return <p>Loading...</p>;

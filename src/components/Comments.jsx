@@ -19,6 +19,7 @@ const Comments = ({comments, setComments, renderKey, setRenderKey}) => {
             setComments(data.comments);
             setIsLoading(false)
         })
+// eslint-disable-next-line
     }, [article_id, renderKey])
     
 

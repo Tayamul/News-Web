@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as api from '../utils/api'
-import {Container, Grid, Card, CardActionArea, CardMedia, CardContent, Typography, Stack, Button} from '@mui/material'
+import {Container, Grid, Card, CardActionArea, CardMedia, CardContent, Typography, Stack } from '@mui/material'
 
 
 const User = () => {
@@ -51,14 +51,3 @@ const User = () => {
 }
 
 export default User
-
-{/* <ul>
-
-    {users.map((user) => {
-        return <li key={user.name}>
-            <h1>{user.username}</h1>
-            <h1>{user.name}</h1>
-            <img src={user.avatar_url}/>
-        </li>
-    })}
-</ul> */}

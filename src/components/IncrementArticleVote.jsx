@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {SlLike} from 'react-icons/sl'
 import * as api from '../utils/api'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
