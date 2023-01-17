@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import * as api from '../utils/api'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
+import {IconButton} from '@mui/material'
 import './incrementArticleVote.css'
 
 const IncrementArticleVote = ({votes, article_id}) => {
@@ -9,7 +10,7 @@ const IncrementArticleVote = ({votes, article_id}) => {
     const [articleVotesIncrement, setArticleVotesIncrement] = useState(0);
     const [error, setError] = useState(null)
 
-    const incVote = (article_id) => {
+    const incVote = (e, article_id) => {
         setArticleVotesIncrement((currVotesIncrement) => currVotesIncrement + 1);
         api.patchArticlesById(article_id, 1).catch((err) => {
             setError("Something's gone worng, please try again")
@@ -17,7 +18,7 @@ const IncrementArticleVote = ({votes, article_id}) => {
         })
     }
 
-    const decVote = (article_id) => {
+    const decVote = (e, article_id) => {
         setArticleVotesIncrement((currVotesIncrement) => currVotesIncrement - 1);
         api.patchArticlesById(article_id, -1).catch((err) => {
             setError("Something's gone worng, please try again")
@@ -30,8 +31,8 @@ const IncrementArticleVote = ({votes, article_id}) => {
     return (
     <section>
         <p className='articles-votes'>{votes + articleVotesIncrement} votes</p>
-        <ThumbDownOffAltOutlinedIcon className='dislike-button' onClick={() => {decVote(article_id)}}/>
-        <ThumbUpOutlinedIcon className='like-button' onClick={() => {incVote(article_id)}}/>
+        <IconButton color='error' onClick={(e) => {decVote(e, article_id)}}><ThumbDownOffAltOutlinedIcon/></IconButton>
+        <IconButton color='success' onClick={(e) => {incVote(e, article_id)}}><ThumbUpOutlinedIcon /></IconButton>
     </section>
     )
 }
