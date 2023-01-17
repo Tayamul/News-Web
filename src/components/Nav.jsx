@@ -20,9 +20,7 @@ const Nav = ({setArticles}) => {
   }
 
   const handleClick = (slug) => {
-    console.log(slug,"NAV SLUG")
     api.getArticles(slug).then((data) => {
-      console.log(data, "NAV")
       setArticles(data.articles);
     })
   }
@@ -31,8 +29,8 @@ const Nav = ({setArticles}) => {
     <Tabs
       value={selectedTopic}
       onChange={handleChange}
-      textColor="secondary"
-      indicatorColor="secondary"
+      textColor="primary"
+      indicatorColor="primary"
       variant='scrollable'
       scrollButtons='auto'
       aria-label="select a topic">
