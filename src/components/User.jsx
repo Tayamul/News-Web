@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import * as api from '../utils/api'
-import {Container, Grid, Card, CardActionArea, CardMedia, CardContent, Typography, Stack } from '@mui/material'
+import {Container, Grid, Card, CardActionArea, CardMedia, CardContent, Typography, Stack, Box, CircularProgress } from '@mui/material'
 
 
 const User = () => {
 
     const [users, setUsers] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true);
         api.getUsers().then((data) => {
             setUsers(data.users)
+            setIsLoading(false);
         })
     }, [])
+
+    if(isLoading) return (
+        <Box sx={{ display: 'flex', justifyContent:'center' }}>
+        <CircularProgress />
+      </Box>
+      )
 
   return (
     <Container sx={{padding: "35px 20px"}}>
