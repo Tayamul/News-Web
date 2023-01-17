@@ -5,6 +5,7 @@ import './comments.css'
 import IncrementVote from './IncrementVote'
 import dayjs from 'dayjs'
 import DeleteComment from './DeleteComment';
+import {Box, CircularProgress} from '@mui/material'
 
 
 const Comments = ({comments, setComments, renderKey, setRenderKey}) => {
@@ -23,7 +24,11 @@ const Comments = ({comments, setComments, renderKey, setRenderKey}) => {
     }, [article_id, renderKey])
     
 
-    if(isLoading) return <p>Loading...</p>
+    if(isLoading) return (
+        <Box sx={{ display: 'flex', justifyContent:'center' }}>
+        <CircularProgress />
+      </Box>
+      )
     if(comments.length === 0) return <p>No comments to display</p>
 
 
