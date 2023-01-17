@@ -5,6 +5,7 @@ import './singleArticle.css'
 import Comments from './Comments'
 import CommentAdder from './CommentAdder'
 import dayjs from 'dayjs'
+import {Box, CircularProgress} from '@mui/material'
 
 const SingleArticle = () => {
 
@@ -29,7 +30,11 @@ const SingleArticle = () => {
   }, [article_id])
 
   isError && <p>Something's gone wrong, please try again</p>
-  if(isLoading) return <p>Loading...</p>
+  if(isLoading) return (
+    <Box sx={{ display: 'flex', justifyContent:'center' }}>
+    <CircularProgress />
+  </Box>
+  )
 
 
   return (
