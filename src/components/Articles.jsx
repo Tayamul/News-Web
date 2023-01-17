@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as api from "../utils/api";
 import { Link } from "react-router-dom";
-// import { Bars } from 'react-loading-icons'
 import IncrementArticleVote from "./IncrementArticleVote";
 import {
   Container,
@@ -16,9 +15,12 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  CircularProgress
 } from "@mui/material";
 import dayjs from "dayjs";
+// import ClipLoader from "react-spinners/ClipLoader";
+
 
 const Articles = ({ articles, setArticles, topic }) => {
 
@@ -40,7 +42,11 @@ const Articles = ({ articles, setArticles, topic }) => {
 // eslint-disable-next-line
   }, [topic, sortBy, order]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if(isLoading) return (
+    <Box sx={{ display: 'flex', justifyContent:'center' }}>
+    <CircularProgress />
+  </Box>
+  )
 
   return (
     <Container
