@@ -13,7 +13,11 @@ import {theme} from './context/Theme'
 
 function App() {
 
-  const [user, setUser] = useState("grumpy19");
+  const [user, setUser] = useState({
+    name: "Paul Grump",
+    username: "grumpy19",
+    avatar_url: "https://vignette.wikia.nocookie.net/mrmen/images/7/78/Mr-Grumpy-3A.PNG/revision/latest?cb=20170707233013"
+  });
   const [articles, setArticles] = useState([]);
 
   return (
