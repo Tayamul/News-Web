@@ -50,7 +50,7 @@ const Articles = ({ articles, setArticles, topic }) => {
       }}
     >
       <Box sx={{mb: 3, display:"flex", flexDirection:'row-reverse'}}>
-        <FormControl sx={{mr: 1, ml: 2, width:"125px"}}>
+        <FormControl sx={{mr: 1, ml: 2, width:"125px"}} color="secondary">
           <InputLabel>Sort by</InputLabel>
             <Select label="sort_by" value={sortBy} onChange={(e) => {setSortBy(e.target.value)}}>
               <MenuItem value={"created_at"}>Date</MenuItem>
@@ -60,7 +60,7 @@ const Articles = ({ articles, setArticles, topic }) => {
               <MenuItem value={"comment_count"}>Comments</MenuItem>
             </Select>
         </FormControl>
-        <FormControl sx={{ml:2, width:"135px"}}>
+        <FormControl sx={{ml:2, width:"135px"}} color="secondary">
           <InputLabel>Order</InputLabel>
             <Select label="order" value={order} onChange={(e) => {setOrder(e.target.value)}}>
               <MenuItem value={"asc"}>Ascending</MenuItem>
