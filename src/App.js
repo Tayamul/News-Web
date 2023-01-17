@@ -7,9 +7,9 @@ import Header from './components/Header'
 import Nav from './components/Nav'
 import Articles from './components/Articles'
 import SingleArticle from './components/SingleArticle';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import {UserContext} from './context/UserContext'
-
+import {theme} from './context/Theme'
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
       <UserContext.Provider value={{user, setUser}}>
       <CssBaseline />
       <Header />
@@ -32,6 +33,7 @@ function App() {
         <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
       </Routes>
       </UserContext.Provider>
+      </ThemeProvider>
     </div>
   );
 }
