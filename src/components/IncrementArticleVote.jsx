@@ -29,10 +29,10 @@ const IncrementArticleVote = ({votes, article_id}) => {
     if(error) return error;
 
     return (
-    <section>
-        <p className='articles-votes'>{votes + articleVotesIncrement} votes</p>
+    <section id='articlevote-container'>
         <IconButton color='error' onClick={(e) => {decVote(e, article_id)}}><ThumbDownOffAltOutlinedIcon/></IconButton>
         <IconButton color='success' onClick={(e) => {incVote(e, article_id)}}><ThumbUpOutlinedIcon /></IconButton>
+        <p className='articles-votes'>{votes + articleVotesIncrement}</p>
     </section>
     )
 }

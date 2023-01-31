@@ -1,3 +1,9 @@
+.like-button {
+    color: green;
+    cursor: pointer;
+    margin-left: 0;
+}
+
 .like-button:hover {
     color: green;
     cursor: pointer;
@@ -11,6 +17,12 @@
 
 .articles-votes {
     font-weight: 400;
-    font-size: 0.7rem;
-    color: #4351E8;
+    font-size: 1rem;
+    color: #41446d;
+}
+
+#articlevote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

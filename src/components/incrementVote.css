@@ -1,3 +1,9 @@
+.like-btn {
+    cursor: pointer;
+    width: 500px;
+    height: 100px;
+}
+
 .like-btn:hover {
     color: green;
     cursor: pointer;

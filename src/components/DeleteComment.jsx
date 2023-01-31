@@ -24,7 +24,7 @@ const DeleteComment = ({comment_id, setComments, renderKey, setRenderKey}) => {
     if(isError) return isError;
 
   return (
-    <><DeleteOutlineOutlinedIcon color='error' onClick={() => handleClick(comment_id)}/></>
+    <DeleteOutlineOutlinedIcon color='error' onClick={() => handleClick(comment_id)}/>
   )
 }
 

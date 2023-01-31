@@ -16,7 +16,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  CircularProgress
+  CircularProgress,
 } from "@mui/material";
 import dayjs from "dayjs";
 // import ClipLoader from "react-spinners/ClipLoader";
@@ -95,7 +95,7 @@ const Articles = ({ articles, setArticles, topic }) => {
                       pathname: `/articles/${article.article_id}`,
                     }}
                   >
-                    <Typography color="textSecondary">
+                    <Typography color="primary">
                       {article.topic.charAt(0).toUpperCase() +
                         article.topic.slice(1)}
                     </Typography>
@@ -138,6 +138,12 @@ const Articles = ({ articles, setArticles, topic }) => {
           ))}
         </Grid>
       </Stack>
+      {/* <Stack>
+      <Pagination 
+      count={10}
+      page={page}
+      onChange={() => {setPage()}}/>
+      </Stack> */}
     </Container>
   );
 };
